@@ -5,7 +5,7 @@ import { colors, fonts } from '../utils';
 
 
 
-export default function Menu4() {
+export default function Menu4({ navigation }) {
 
     const [halaman, setHalaman] = useState(0);
 
@@ -34,27 +34,41 @@ export default function Menu4() {
                     fontFamily: fonts.secondary[600],
                     color: colors.white,
                     fontSize: 20
-                }}>Gizi Ibu Hamil dan Menyusui</Text>
+                }}>Evaluasi</Text>
             </View>
-            <Pdf
-                enablePaging={true}
-                horizontal={true}
-                trustAllCerts={false}
-                source={source}
-                onLoadComplete={(numberOfPages, filePath) => {
-                    console.log(`Number of pages: ${numberOfPages}`);
-                    setHalaman(numberOfPages);
-                }}
-                onPageChanged={(page, numberOfPages) => {
-                    console.log(`Current page: ${page}`);
-                }}
-                onError={(error) => {
-                    console.log(error);
-                }}
-                onPressLink={(uri) => {
-                    console.log(`Link pressed: ${uri}`);
-                }}
-                style={styles.pdf} />
+            <View style={{
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'space-around',
+                padding: 10,
+            }}>
+                <TouchableOpacity onPress={() => navigation.navigate('Evaluasi1')} style={{
+                    flex: 1,
+                    backgroundColor: colors.primary,
+                    marginVertical: 20,
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <Text style={{
+                        fontFamily: fonts.secondary[600],
+                        color: colors.white,
+                        fontSize: 30
+                    }}>Evaluasi 1</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Evaluasi2')} style={{
+                    flex: 1,
+                    backgroundColor: colors.secondary,
+                    marginVertical: 20,
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <Text style={{
+                        fontFamily: fonts.secondary[600],
+                        color: colors.white,
+                        fontSize: 30
+                    }}>Evaluasi 2</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 

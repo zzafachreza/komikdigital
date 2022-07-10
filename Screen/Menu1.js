@@ -5,13 +5,13 @@ import { colors, fonts } from '../utils';
 
 
 
-export default function Menu1() {
+export default function Materi1() {
 
     const [halaman, setHalaman] = useState(0);
 
     // const source = { uri: 'http://samples.leanpub.com/thereactnativebook-sample.pdf', cache: true };
     // const source = require('../menu1.pdf');  // ios only
-    const source = { uri: 'bundle-assets://pdf/menu1.pdf' };
+    const source = { uri: 'bundle-assets://pdf/petunjuk.pdf' };
     //const source = {uri:'file:///sdcard/test.pdf'};
     //const source = {uri:"data:application/pdf;base64,JVBERi0xLjcKJc..."};
     //const source = {uri:"content://com.example.blobs/xxxxxxxx-...?offset=0&size=xxx"};
@@ -34,11 +34,11 @@ export default function Menu1() {
                     fontFamily: fonts.secondary[600],
                     color: colors.white,
                     fontSize: 20
-                }}>Mengenal Stunting</Text>
+                }}>Petunjuk</Text>
             </View>
             <Pdf
                 enablePaging={true}
-                horizontal={true}
+                // horizontal={true}
                 trustAllCerts={false}
                 source={source}
                 onLoadComplete={(numberOfPages, filePath) => {

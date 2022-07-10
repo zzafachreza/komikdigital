@@ -45,3 +45,4 @@ export const fonts = {
         normal: 'OpenSans-Regular',
     },
 };
+

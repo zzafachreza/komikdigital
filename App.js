@@ -13,6 +13,8 @@ import Menu3 from './Screen/Menu3';
 import Menu4 from './Screen/Menu4';
 import Materi2 from './Screen/Materi2';
 import Materi1 from './Screen/Materi1';
+import Evaluasi1 from './Screen/Evaluasi1';
+import Evaluasi2 from './Screen/Evaluasi2';
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -94,6 +96,25 @@ export default function App() {
         <Stack.Screen
           name="Materi1"
           component={Materi1}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+
+        <Stack.Screen
+          name="Evaluasi1"
+          component={Evaluasi1}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+
+
+        <Stack.Screen
+          name="Evaluasi2"
+          component={Evaluasi2}
           options={{
             headerShown: false,
           }}
