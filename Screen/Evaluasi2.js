@@ -7,7 +7,7 @@ import { colors, fonts } from '../utils'
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 
-export default function Evaluasi2() {
+export default function Evaluasi2({ navigation }) {
 
     const lebarDevice = Dimensions.get('window').width;
     const windowHeight = Dimensions.get('window').height;
@@ -84,7 +84,7 @@ export default function Evaluasi2() {
             "b": "b.	Mereka selalu berkata jujur dan tidak pernah berbohong",
             "c": "c.	Mereka selalu bekerja keras mengumpulkan makanan ",
             "d": "d.	Mereka tidak mau menolong si Rusa yang sedang kesusahan",
-            "betul": "d"
+            "betul": "a"
         },
         {
             "pertanyaan": "Berikut ini, gambar manakah yang mencerminkan sikap yang sesuai dengan nilai Pancasila sila ketiga, kecuali….",
@@ -239,7 +239,27 @@ export default function Evaluasi2() {
                 })}
 
 
+                <TouchableOpacity onPress={() => {
 
+                    navigation.navigate('Hasil', {
+                        jawaban: jawaban
+                    })
+
+
+
+                }} style={{
+                    padding: 15,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backgroundColor: colors.secondary,
+                    borderRadius: 10,
+                }}>
+                    <Text style={{
+                        fontFamily: fonts.secondary[600],
+                        color: colors.white,
+                        fontSize: 15
+                    }}>Lihat Nilai</Text>
+                </TouchableOpacity>
 
             </ScrollView>
 

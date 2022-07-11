@@ -15,9 +15,35 @@ import Materi2 from './Screen/Materi2';
 import Materi1 from './Screen/Materi1';
 import Evaluasi1 from './Screen/Evaluasi1';
 import Evaluasi2 from './Screen/Evaluasi2';
+import Hasil from './Screen/Hasil';
+
+import Sound from 'react-native-sound';
+
+
+var whoosh = new Sound(
+  require('./suara.mp3'),
+  Sound.MAIN_BUNDLE,
+  (error) => {
+    if (error) {
+      console.log('failed to load the sound', error);
+      return;
+    }
+    // loaded successfully
+    console.log(
+      'duration in seconds: ' +
+      whoosh.getDuration() +
+      'number of channels: ' +
+      whoosh.getNumberOfChannels(),
+    );
+  },
+);
+
 
 const Stack = createStackNavigator();
 export default function App() {
+
+  whoosh.play();
+
 
   LogBox.ignoreAllLogs();
 
@@ -115,6 +141,14 @@ export default function App() {
         <Stack.Screen
           name="Evaluasi2"
           component={Evaluasi2}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name="Hasil"
+          component={Hasil}
           options={{
             headerShown: false,
           }}
